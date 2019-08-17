@@ -3,7 +3,9 @@
   <title>{{.title}}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css.map">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 {{end}}
@@ -55,7 +57,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-primary">
+          <a href="/me/mypage"class="button is-primary">
             <strong>{{.session.UserName}}</strong>
           </a>
           <a href="/logout"class="button is-light">
@@ -81,6 +83,9 @@
   </div>
 </nav>
 </header>
+<div style="color:red">
+ {{.error}}
+</div>
 {{end}}
 
 {{ define "footer" }}

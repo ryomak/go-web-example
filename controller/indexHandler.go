@@ -7,9 +7,9 @@ import (
 )
 
 func (s *Server) Index(c *gin.Context) {
-	i, _ := c.Get("authUser")
+	info, _ := GetSessionInfo(c)
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{
 		"title":   "top",
-		"session": i,
+		"session": info,
 	})
 }

@@ -25,8 +25,10 @@ func main() {
 	router.GET("/logout", server.Logout)
 	router.GET("/signup", server.SignUp)
 	router.POST("/signup", server.SignUpPost)
+
 	privateRouter := router.Group("/me")
 	privateRouter.Use(controller.AuthMiddle())
-	privateRouter.GET("/", server.Me)
+	privateRouter.GET("/mypage", server.Me)
+
 	router.Run(":8080")
 }
