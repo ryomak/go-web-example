@@ -7,9 +7,9 @@ import (
 
 type User struct {
 	gorm.Model
-	Name        string
-	Mail        string
-	Password    string
+	Name        string `form:"name" binding:"required" gorm:"not null"`
+	Mail        string `form:"mail" binding:"required" gorm:"unique;not null"`
+	Password    string `form:"password" binding:"required" gorm:"not null"`
 	Description string
 }
 

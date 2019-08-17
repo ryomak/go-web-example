@@ -6,9 +6,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var Index = func(c *gin.Context) {
+func (s *Server) Index(c *gin.Context) {
+	i, _ := c.Get("authUser")
 	c.HTML(http.StatusOK, "index.tmpl", gin.H{
-
-		"title": "top",
+		"title":   "top",
+		"session": i,
 	})
 }
